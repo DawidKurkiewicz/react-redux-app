@@ -1,10 +1,11 @@
 import React from 'react'
-import TextField from 'material-ui/TextField'
 
 
 class Add extends React.Component {
 state = {
-    sum: 0 
+    sum: 0,
+    first: this.props.first,
+    second: this.props.second
 }
 
 
@@ -19,11 +20,13 @@ state = {
             <div>
                 <h2> Results : {this.state.sum} </h2>
                 <input
-                    // value={}
+                    value={this.state.first}
+                    onChange = {this.addFirstInput}
                 >
                 </input>
                 <input
-                    // value={}
+                    value={this.state.second}
+                    onChange = {this.addSecondInput}
                 >
                 </input>
 
@@ -31,4 +34,10 @@ state = {
         )
     }
 }
+
+Add.defaultProps = {
+    first: 3,
+    second: 4
+}
+
 export default Add
