@@ -23,7 +23,7 @@ class FetchUsers extends React.Component {
                     this.state.data.map(user => (
                         <div key={user.login.uuid}>
                             <div>
-                                <a href="mailto: {user.email}">{user.email}</a>
+                                <a href={"mailto: " + user.email}>{user.email}</a>
                             </div>
                         </div>
                     ))

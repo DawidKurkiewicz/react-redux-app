@@ -6,9 +6,9 @@ import Navigation from './Navigation'
 import MenuItem from 'material-ui/MenuItem'
 import FetchingUsers from './FetchUsers'
 
-// const style = {
-//   textDecoration: 'none'
-// }
+const style = {
+  textDecoration: 'none'
+}
 
 class App extends React.Component {
   render() {
@@ -22,27 +22,38 @@ class App extends React.Component {
             <Navigation
               label={"JFDDL6"}
             >
-              <Link to="/">
-                <MenuItem>
+              <Link
+                style={style}
+                to="/">
+                <MenuItem
+                >
                   home
             </MenuItem>
               </Link>
-              <Link to="/Counter">
+              <Link
+                style={style}
+                to="/Counter">
                 <MenuItem>
                   counter
               </MenuItem>
               </Link>
-              <Link to="/passing-props">
+              <Link
+                style={style}
+                to="/passing-props">
                 <MenuItem>
                   passing props
               </MenuItem>
               </Link>
-              <Link to="/counter-with-start-value">
+              <Link
+                style={style}
+                to="/counter-with-start-value">
                 <MenuItem>
                   start value 15
              </MenuItem>
               </Link>
-              <Link to="/FetchinUsers">
+              <Link
+              style= {style}
+              to="/FetchinUsers">
                 <MenuItem>
                   FetchUsers
           </MenuItem>
