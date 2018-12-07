@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 class Counter extends React.Component {
     state = {
-        value: this.props.startValue
+        value: this.props.startValue 
     }
 
     plusHandler = () => {
