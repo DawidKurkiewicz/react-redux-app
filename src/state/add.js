@@ -3,17 +3,17 @@ const SECOND_INPUT = "SECOND_INPUT"
 
 
 const INITIAL_STATE = {
-    first: 3,
-    second: 4
+    first: 0,
+    second: 0
 }
 
 export const addFirstInput = value => ({
     type: FIRST_INPUT,
-    value
+    value: Number(value)
 })
 export const addSecondInput = value => ({
     type: SECOND_INPUT,
-    value
+    value: Number(value)
 })
 
 

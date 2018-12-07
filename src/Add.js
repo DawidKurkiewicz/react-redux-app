@@ -1,43 +1,28 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import {addFirstInput, addSecondInput } from './state/add'
 
 
 
 class Add extends React.Component {
-    state = {
-        first: this.props.first,
-        second: this.props.second
-    }
 
-    addFirstInput = event => {
-        this.setState({
-            first: event.target.value 
-        })
-
-    }
-
-    addSecondInput = event => {
-        this.setState({
-            second: event.target.value
-        })
-    }
     render() {
         return (
             <div>
                 <h2> Results : {
-                    Number(this.state.first) + Number(this.state.second)
+                    Number(this.props._first) + Number(this.props._second)
                 }
                 </h2>
                 <input
                     type="number"
-                    value={this.state.first}
-                    onChange={this.addFirstInput}
+                    value={this.props._first}
+                    onChange={this.props._addFirstInput}
                 >
                 </input>
                 <input
                     type="number"
-                    value={this.state.second}
-                    onChange={this.addSecondInput}
+                    value={this.props._second}
+                    onChange={this.props._addSecondInput}
                 >
                 </input>
             </div>
@@ -45,19 +30,17 @@ class Add extends React.Component {
     }
 }
 const mapStateToProps = state => ({
-    first: state.add.first,
-    second: state.add.second
+    _first: state.add.first,
+    _second: state.add.second
 })
 const mapDispatchToProps = dispatch => ({
-
+    _addFirstInput: event => dispatch(addFirstInput(event.target.value)),
+    _addSecondInput: event => dispatch(addSecondInput(event.target.value))
 })
 
 
 
-// Add.defaultProps = {
-//     first: 3,
-//     second: 4
-// }
+
 export default connect(
     mapStateToProps,
     mapDispatchToProps
