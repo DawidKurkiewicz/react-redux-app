@@ -6,7 +6,7 @@ import Navigation from './Navigation'
 import MenuItem from 'material-ui/MenuItem'
 import FetchingUsers from './FetchUsers'
 import SyncUsers from './SyncUsers'
-
+import Add from './Add'
 const style = {
   textDecoration: 'none'
 }
@@ -64,6 +64,13 @@ class App extends React.Component {
                   SyncUsers
                 </MenuItem>
               </Link>
+              <Link
+                style={style}
+                to="/Add">
+                <MenuItem>
+                  Add
+                </MenuItem>
+              </Link>
             </Navigation>
 
           </div>
@@ -77,6 +84,9 @@ class App extends React.Component {
             <Route path="/counter-with-start-value" component={() => <Counter startValue={15} />}></Route>
             <Route path="/FetchinUsers" component={FetchingUsers}></Route>
             <Route path="/SyncUsers" component={SyncUsers} />
+            <Route path="/Add" component={Add} />
+
+
 
           </div>
         </div>
