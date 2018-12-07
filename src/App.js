@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Navigation from './Navigation'
 import MenuItem from 'material-ui/MenuItem'
 import FetchingUsers from './FetchUsers'
+import SyncUsers from './SyncUsers'
 
 const style = {
   textDecoration: 'none'
@@ -20,22 +21,20 @@ class App extends React.Component {
         <div>
           <div>
             <Navigation
-              label={"JFDDL6"}
-            >
+              label={"JFDDL6"}>
               <Link
                 style={style}
                 to="/">
-                <MenuItem
-                >
+                <MenuItem>
                   home
-            </MenuItem>
+                </MenuItem>
               </Link>
               <Link
                 style={style}
                 to="/Counter">
                 <MenuItem>
                   counter
-              </MenuItem>
+                </MenuItem>
               </Link>
               <Link
                 style={style}
@@ -49,27 +48,36 @@ class App extends React.Component {
                 to="/counter-with-start-value">
                 <MenuItem>
                   start value 15
-             </MenuItem>
+                </MenuItem>
               </Link>
               <Link
-              style= {style}
-              to="/FetchinUsers">
+                style={style}
+                to="/FetchinUsers">
                 <MenuItem>
                   FetchUsers
-          </MenuItem>
+                </MenuItem>
+              </Link>
+              <Link
+                style={style}
+                to="/SyncUsers">
+                <MenuItem>
+                  SyncUsers
+                </MenuItem>
               </Link>
             </Navigation>
 
           </div>
           <div>
-            <Route exact path="/" component={() => <Counter />}></Route>
-            <Route path="/Counter" component={() => <Counter />}></Route>
+            <Route exact path="/" component={Counter}></Route>
+            <Route path="/Counter" component={Counter}></Route>
             <Route path="/passing-props" component={() => <PassingProps
               passingValue={5}
               passingFun={() => alert('bu!')} />}
             />
             <Route path="/counter-with-start-value" component={() => <Counter startValue={15} />}></Route>
-            <Route path="/FetchinUsers" component={() => <FetchingUsers />}></Route>
+            <Route path="/FetchinUsers" component={FetchingUsers}></Route>
+            <Route path="/SyncUsers" component={SyncUsers} />
+
           </div>
         </div>
       </Router>

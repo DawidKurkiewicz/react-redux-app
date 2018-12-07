@@ -1,16 +1,21 @@
 import React from "react"
+import { database } from './firebaseConfig'
 
 class SyncUsers extends React.Component {
+
     state = {
         data: null
     }
 
-
-
-
-
-
-
+    componentDidMount() {
+        database.ref('/jfddl6/randomusers').once(
+            'value',
+            snapshot => {
+                const arrayOfUsers = snapshot.val().results
+                this.setState({ data: arrayOfUsers })
+            }
+        )
+    }
     render() {
         return (
             <div>
@@ -28,4 +33,4 @@ class SyncUsers extends React.Component {
         )
     }
 }
-export default SyncsUsers
+export default SyncUsers
