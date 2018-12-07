@@ -3,12 +3,22 @@ import React from 'react'
 
 class Add extends React.Component {
 state = {
-    sum: 0,
     first: this.props.first,
     second: this.props.second
 }
 
+addFirstInput = element => {
+    this.setState ({
+        first: element.target.value
+    })
 
+}
+
+addSecondInput = element => {
+    this.setState ({
+        second: element.target.value
+    })
+}
 
 
 
@@ -18,7 +28,10 @@ state = {
         return (
 
             <div>
-                <h2> Results : {this.state.sum} </h2>
+                <h2> Results : {
+                    parseInt(this.state.first) + parseInt(this.state.second)
+                }
+                 </h2>
                 <input
                     value={this.state.first}
                     onChange = {this.addFirstInput}
